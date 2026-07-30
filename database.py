@@ -7,7 +7,7 @@ load_dotenv()
 conn = mysql.connector.connect(
     host="localhost",
     user="root",
-    password=os.getenv('DB_PASSWORD'),
+    password=os.getenv('LOCAL_DB_PASSWORD'),
     database="crypto_data"
 )
 if conn.is_connected():
