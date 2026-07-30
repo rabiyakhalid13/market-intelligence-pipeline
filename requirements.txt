@@ -1,0 +1,7 @@
+dash
+pandas
+plotly
+mysql-connector-python
+python-dotenv
+requests
+gunicorn 

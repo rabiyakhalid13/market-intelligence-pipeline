@@ -9,16 +9,20 @@ from fetch_data import fetch_prices
 # 1. DATA LOADING 
 load_dotenv()
 conn = mysql.connector.connect(
-    host="localhost",
-    user="root",
+    host=os.getenv('DB_HOST'),
+    port=int(os.getenv('DB_PORT')),
+    user=os.getenv('DB_USER'),
     password=os.getenv('DB_PASSWORD'),
-    database="crypto_data"
-)
+    database=os.getenv('DB_NAME')
+    )
 cursor = conn.cursor()
 cursor.execute("SELECT coin_name, price, timestamp FROM Prices")
 data = cursor.fetchall()
+
 df = pd.DataFrame(data, columns=['coin_name', 'price', 'timestamp'])
 df['price'] = df['price'].astype(float)
+df['timestamp'] = pd.to_datetime(df['timestamp']) 
+df = df.sort_values(['coin_name', 'timestamp'])
 df['date'] = df['timestamp'].dt.date
 
 # 2. CALCULATIONS 
@@ -128,7 +132,7 @@ def update_cards(selected_coin):
 def update_graph(selected_coin):
     filtered_df = df[df['coin_name'] == selected_coin]
     fig = px.line(filtered_df, x='timestamp', y='price',
-                   title=f'{selected_coin.capitalize()} Price Trend (Hourly)')
+                   title=f'{selected_coin.capitalize()} Price Trend — Hourly Data, Last 30 Days')
     return fig
 
 
@@ -144,5 +148,7 @@ def update_table(selected_coin):
 # ============================================================
 # 8. RUN APP
 # ============================================================
+server = app.server
 if __name__ == "__main__":
     app.run(debug=True)
+    
