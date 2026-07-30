@@ -64,7 +64,8 @@ summary_text = f"Top performer: {top_coin.capitalize()} ({percentage_change.max(
 app = Dash(__name__)
 
 app.layout = html.Div([
-    html.H1("Crypto Market Intelligence Dashboard", style={'textAlign': 'center'}),
+    html.H1("Crypto Market Intelligence Dashboard", 
+            style={'textAlign': 'center', 'color': '#1a1a2e', 'paddingTop': '20px'}),
 
     html.P(f"Data range: {df['date'].min()} to {df['date'].max()}", 
        style={'textAlign': 'center', 'color': 'gray'}),
@@ -73,7 +74,7 @@ app.layout = html.Div([
 
     html.P(summary_text, style={'textAlign': 'center', 'fontSize': '18px', 'marginTop': '20px'}),
 
-    html.H3("Select a Coin", style={'marginTop': '30px'}),
+    html.H3("Select a Coin", style={'marginTop': '30px', 'borderBottom': '2px solid #eee', 'paddingBottom': '10px'}),
     dcc.Dropdown(
         id='coin-dropdown',
         options=[{'label': c.capitalize(), 'value': c} for c in df['coin_name'].unique()],
@@ -82,16 +83,16 @@ app.layout = html.Div([
 
     dcc.Graph(id='selected-coin-graph'),
 
-    html.H3("Daily Average Trend (All Coins)"),
+    html.H3("Daily Average Trend (All Coins)", style={'borderBottom': '2px solid #eee', 'paddingBottom': '10px', 'marginTop': '40px'}),
     dcc.Graph(figure=daily_fig),
 
-    html.H3("Percentage Change Comparison"),
+    html.H3("Percentage Change Comparison", style={'borderBottom': '2px solid #eee', 'paddingBottom': '10px', 'marginTop': '40px'}),
     dcc.Graph(figure=pct_fig),
 
-    html.H3("Volatility Comparison"),
+    html.H3("Volatility Comparison", style={'borderBottom': '2px solid #eee', 'paddingBottom': '10px', 'marginTop': '40px'}),
     dcc.Graph(figure=vol_fig),
 
-    html.H3("Data Table"),
+    html.H3("Data Table", style={'borderBottom': '2px solid #eee', 'paddingBottom': '10px', 'marginTop': '40px'}),
     dash_table.DataTable(
         id='data-table',
         columns=[{"name": i, "id": i} for i in ['coin_name', 'price', 'timestamp']],
@@ -99,7 +100,8 @@ app.layout = html.Div([
         filter_action='native',
         sort_action='native'
     )
-], style={'maxWidth': '1000px', 'margin': 'auto', 'fontFamily': 'Arial'})
+], style={'maxWidth': '1000px', 'margin': 'auto', 'fontFamily': 'Segoe UI, sans-serif', 
+          'backgroundColor': '#f5f7fa', 'padding': '30px'})
 
 # 7. CALLBACKS
 
