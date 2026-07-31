@@ -31,13 +31,13 @@ The application fetches cryptocurrency prices from the CoinGecko API, stores the
 ## Screenshots
 
 **Dashboard overview — live price cards and trend**
-![Dashboard Overview](screenshots/dashboard-overview.png)
+![Dashboard Overview](images/dashboard-overview.png)
 
 **Daily average comparison across coins**
-![Daily Average](screenshots/daily-average.png)
+![Daily Average](images/daily-average.png)
 
 **Volatility comparison**
-![Volatility](screenshots/volatility.png)
+![Volatility](images/volatility.png)
 
 ---
 
