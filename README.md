@@ -35,7 +35,7 @@ The application fetches cryptocurrency prices from the CoinGecko API, stores the
 ```text
                   CoinGecko API
                         │
-        ┌───────────────┴───────────────┐
+        ┌─-─────────────┴───────────────┐
         │                               │
  historical_data.py              fetch_data.py
         │                               │
@@ -131,7 +131,6 @@ The analysis is visualized using Plotly charts.
 * REST API Integration
 * ETL Pipeline Development
 * Relational Database Management
-* SQL Data Storage
 * Exploratory Data Analysis (EDA)
 * Interactive Dashboard Development
 * Data Visualization
@@ -171,13 +170,6 @@ python dashboard.py
 * Enable continuous real-time data collection through scheduled background jobs
 * Track additional cryptocurrencies
 * Add automated unit tests
-* Containerize the application using Docker
-* Implement a CI/CD deployment workflow
 
 ---
 
-## Author
-
-**Rabiya Khalid**
-
-This project was developed as part of a self-directed summer learning journey focused on building practical, end-to-end data engineering and data science skills.
