@@ -1,6 +1,6 @@
 # Crypto Market Intelligence Dashboard
 
-🔗 **Live Dashboard:** https://market-intelligence-pipeline-production.up.railway.app
+🔗 **Live Dashboard:** market-intelligence-pipeline-production.up.railway.app
 
 An end-to-end data pipeline that collects cryptocurrency market data, stores it in a MySQL database, performs exploratory analysis, and presents the results through an interactive Dash dashboard.
 
