@@ -28,6 +28,17 @@ The application fetches cryptocurrency prices from the CoinGecko API, stores the
 * Searchable market data table
 * Automation script for scheduled hourly data collection
 
+## Screenshots
+
+**Dashboard overview — live price cards and trend**
+![Dashboard Overview](screenshots/dashboard-overview.png)
+
+**Daily average comparison across coins**
+![Daily Average](screenshots/daily-average.png)
+
+**Volatility comparison**
+![Volatility](screenshots/volatility.png)
+
 ---
 
 ## Project Workflow
